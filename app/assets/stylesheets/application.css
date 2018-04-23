@@ -27,3 +27,12 @@ a {
 body {
   background-color: #262626
 }
+
+h2 {
+  color: white;
+}
+
+div {
+  width: 10em;
+  height: 10em;
+}
