@@ -34,6 +34,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'dotenv-rails'
+  gem "factory_bot_rails"
+  gem "rspec-rails"
+  gem 'launchy'
+  gem 'pry'
 end
 
 group :development do
