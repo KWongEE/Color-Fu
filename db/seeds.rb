@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+palette_attributes = [
+  { title: "Fall Leaves", description: "blah blah blah", hexcode: "#d54700" },
+  { title: "Just Red", hexcode: "#ff0000"}
+]
+
+palette_attributes.each do |a|
+  new_palette = Palette.create(a)
+end
