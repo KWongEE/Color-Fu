@@ -17,11 +17,13 @@
  */
  h1 {
    color: white;
+   text-align: center;
    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
  }
 a {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-align: center;
 }
 
 body {
@@ -32,7 +34,13 @@ h2 {
   color: white;
 }
 
-div {
+.color {
   width: 10em;
   height: 10em;
+}
+
+p {
+  color: white;
+  font-size: 25px;
+
 }

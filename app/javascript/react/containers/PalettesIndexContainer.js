@@ -12,7 +12,11 @@ class PalettesIndexContainer extends Component {
   }
 
   componentDidMount() {
-    this.setState( {palettes: [{id: 1, title: "Marine", hexcode: "#00FFFF"}]})
+    this.setState( {palettes: [
+    {id: 1, title: "Marine", hexcode: "#00FFFF"},
+    {id: 2, title: "Autumnal", hexcode: "#ff8800"},
+    {id: 3, title: "Grassy", hexcode: "#0d6300"}
+    ]})
     //this will be a fetch later
   }
 

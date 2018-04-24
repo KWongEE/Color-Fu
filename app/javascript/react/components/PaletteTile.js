@@ -3,11 +3,11 @@ import { Link } from 'react-router'
 
 const PaletteTile = (props) => {
   return(
-    <div>
+    <div className="color" style={{backgroundColor: props.hexcode}}>
       <Link to={`/palettes/${props.id}`}>
-        <p>props.title</p>
+        <p>{props.title}</p>
       </Link>
-      <hr/>
+
     </div>
   )
 }
