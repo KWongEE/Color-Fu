@@ -7,5 +7,6 @@ class Api::V1::PalettesController < ApplicationController
     render json: Palette.find(params[:id]), adapter: :json
   end
 
+
   # create
 end
