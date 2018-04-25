@@ -12,8 +12,4 @@ const PaletteTile = (props) => {
   )
 }
 
-
-
-
-
 export default PaletteTile
