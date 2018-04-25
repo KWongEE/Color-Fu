@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   root 'palettes#index'
+
   devise_for :users
-  # resources :palettes
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :palettes
+
+  namespace :api do
+    namespace :v1 do
+      resources :palettes
+    end
+  end
+  
 end

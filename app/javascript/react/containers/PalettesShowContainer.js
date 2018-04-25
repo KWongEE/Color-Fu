@@ -10,8 +10,21 @@ class PalettesShowContainer extends Component {
   }
 
   componentDidMount() {
-    //this is a fetch later
-    this.setState({palette: {id: 1, title: "Marine", hexcode: "#00FFFF"}})
+    let paletteId = this.props.params.id
+
+    fetch(`http://localhost:3000/api/v1/palettes/${paletteId}`)
+      .then(response => {
+        if (response.ok) {
+          return response
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`
+        }
+      })
+      .then(response => response.json())
+      .then(palette => {
+        this.setState( { palette: palette.palette } )
+      })
+      .catch(error => console.error(`${error.message}`))
   }
 
   render() {
@@ -20,6 +33,7 @@ class PalettesShowContainer extends Component {
         id={this.state.palette.id}
         title={this.state.palette.title}
         hexcode={this.state.palette.hexcode}
+        description = {this.state.palette.description}
       />
     )
   }

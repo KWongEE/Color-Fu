@@ -12,12 +12,19 @@ class PalettesIndexContainer extends Component {
   }
 
   componentDidMount() {
-    this.setState( {palettes: [
-    {id: 1, title: "Marine", hexcode: "#00FFFF"},
-    {id: 2, title: "Autumnal", hexcode: "#ff8800"},
-    {id: 3, title: "Grassy", hexcode: "#0d6300"}
-    ]})
-    //this will be a fetch later
+    fetch('api/v1/palettes')
+      .then(response => {
+        if (response.ok) {
+          return response
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`
+        }
+      })
+      .then(response => response.json())
+      .then(paletteObjs => {
+        this.setState( { palettes: paletteObjs.palettes } )
+      })
+      .catch(error => console.error(`${error.message}`))
   }
 
   render() {
@@ -38,6 +45,7 @@ class PalettesIndexContainer extends Component {
         {palettes}
       </div>
     )
+
   }
 }
 
