@@ -10,5 +10,5 @@ Rails.application.routes.draw do
       resources :palettes
     end
   end
-  
+
 end

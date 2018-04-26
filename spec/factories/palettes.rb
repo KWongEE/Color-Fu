@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :palette do
-    title  'Aqua Blue'
-    description 'The blue of the ocean'
-    hexcode '#00FFFF'
+    title { Faker::Friends.character }
+    description { Faker::HarryPotter.quote }
+    hexcode { Faker::Color.hex_color }
   end
 end

@@ -92,6 +92,8 @@ GEM
     factory_bot_rails (4.8.2)
       factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
+    faker (1.8.7)
+      i18n (>= 0.7)
     ffi (1.9.23)
     foundation-rails (5.5.3.2)
       railties (>= 3.1.0)
@@ -256,6 +258,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot
   factory_bot_rails
+  faker
   foundation-rails (~> 5.0)
   jbuilder (~> 2.5)
   jquery-rails
