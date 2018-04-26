@@ -4,7 +4,7 @@ class CreatePalettes < ActiveRecord::Migration[5.2]
 
       t.string :title, null: false
       t.text :description
-      t.string :hexcode
+      t.string :hexcode, array: true, default: []
 
       t.timestamps
     end

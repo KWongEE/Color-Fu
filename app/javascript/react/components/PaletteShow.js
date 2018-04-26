@@ -1,22 +1,29 @@
 import React from 'react'
 
 const PaletteShow = (props) => {
-  return(
-    <div className="color" style={{backgroundColor: props.hexcode}}>
-      <div>
-      <h2>{props.title}</h2> <br />
-      <p>{props.hexcode}</p>
-    </div>
 
-    <div >
-      <p className="description">
-        {props.description}
-      </p>
-    </div>
+  if(props.hexcode){
+    return(
+      <div className="color" style={{backgroundColor: props.hexcode[0]}}>
+        <div>
+        <h2>{props.title}</h2> <br />
+        <p>{props.hexcode[0]}</p>
+      </div>
+
+      <div >
+        <p className="description">
+          {props.description}
+        </p>
+      </div>
 
 
-    </div>
-  )
+      </div>
+    )
+  } else {
+    return(
+      <div></div>
+    )
+  }
 }
 
 export default PaletteShow
