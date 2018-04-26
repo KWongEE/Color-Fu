@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PaletteTile from '../components/PaletteTile'
+import PaletteFormContainer from './PaletteFormContainer'
 
 class PalettesIndexContainer extends Component {
   constructor(props) {
@@ -42,7 +43,9 @@ class PalettesIndexContainer extends Component {
     return(
       <div>
         {palettes}
+
       </div>
+
     )
 
   }
