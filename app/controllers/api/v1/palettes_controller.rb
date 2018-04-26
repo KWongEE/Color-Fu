@@ -10,13 +10,9 @@ class Api::V1::PalettesController < ApplicationController
 
 
   def create
-    palette = Palette.new(palette_params)
-    if palette.save
-      head 200
-    else
-      head 500
-    end
+    palette = Palette.create(palette_params)
   end
+  
   private
 
   def palette_params
