@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TextField from '../components/TextField'
+import { browserHistory, withRouter } from 'react-router'
 
 class PaletteFormContainer extends Component {
   constructor(props) {
@@ -78,8 +79,8 @@ class PaletteFormContainer extends Component {
   handleFormSubmit(event) {
     event.preventDefault();
 
-    // if(this.validateTitle(this.state.title) &&
-    //    this.validateHexcode(this.state.hexcode) ) {
+    if(this.validateTitle(this.state.title) &&
+       this.validateHexcode(this.state.hexcode) ) {
 
       let formPayload = {
         palette: {
@@ -90,11 +91,12 @@ class PaletteFormContainer extends Component {
       }
 
       this.addPalette(formPayload)
-      this.handleClearForm(event);
+      // this.props.history.push('/')
     }
-  // }
+  }
 
   render() {
+    console.log(this.props)
     let errorDiv;
     let errorItems;
     if (Object.keys(this.state.errors).length > 0) {
