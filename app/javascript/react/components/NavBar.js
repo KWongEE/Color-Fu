@@ -5,7 +5,7 @@ const NavBar = props => {
   return(
     <div>
       <div className="navbar">
-        <Link to='/palettes/new'>Add Pallette</Link>
+        <Link to='/palettes/new'>Add Palette</Link>
       </div>
       <div className="content">
         <h1 className="page-title"></h1>

@@ -8,6 +8,7 @@ class PalettesController < ApplicationController
   end
 
   def new
-    @palette = Palette.new 
+    @palette = Palette.new
   end
+
 end

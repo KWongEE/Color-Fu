@@ -41,10 +41,6 @@ class PaletteFormContainer extends Component {
       let newError = { title: 'You must enter something in the title field.' }
       this.setState({ errors: Object.assign(this.state.errors, newError) })
       return false
-    } else if(bugana.includes('Donald Trump')) {
-      let newError = { title: 'Please do not submit any more palettes about Donald Trump.'}
-      this.setState({ errors: Object.assign(this.state.errors, newError) })
-      return false
     } else {
       let errorState = this.state.errors
       delete errorState.title
@@ -69,8 +65,12 @@ class PaletteFormContainer extends Component {
   }
 
   addPalette(submission) {
-    fetch('http://localhost:3000/api/v1/palettes', {
+    fetch(`/api/v1/palettes`, {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+        //^ Tells rails to turn this body into json
+      },
       body: JSON.stringify(submission)
     })
   }
@@ -78,19 +78,21 @@ class PaletteFormContainer extends Component {
   handleFormSubmit(event) {
     event.preventDefault();
 
-    if(this.validateTitle(this.state.title) &&
-       this.validateHexcode(this.state.hexcode) ) {
+    // if(this.validateTitle(this.state.title) &&
+    //    this.validateHexcode(this.state.hexcode) ) {
 
       let formPayload = {
-        title: this.state.title,
-        hexcode: this.state.hexcode,
-        description: this.state.description
+        palette: {
+          title: this.state.title,
+          hexcode: this.state.hexcode,
+          // description: this.state.description
+        }
       }
 
       this.addPalette(formPayload)
       this.handleClearForm(event);
     }
-  }
+  // }
 
   render() {
     let errorDiv;
