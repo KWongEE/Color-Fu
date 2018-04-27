@@ -35,23 +35,25 @@ h2 {
   text-align: center;
 }
 
-.color {
-
-  width: 1em;
-  height: 4em;
-  display: inline-block;
-}
 .tile {
+  /* border-radius: 40px;
   border-style: solid;
   border-color: white;
-  border-width: thick;
+  border-width: thick; */
+}
+
+.color {
+  overflow: hidden;
+  width: 20%;
+  height: 4em;
+  display: inline-block;
 }
 
 p {
   color: white;
-  font-size: 25px;
+  font-size: 12px;
   text-align: center;
-
+  font-family: 'Comic Sans Ms'
 }
 
 .description {
