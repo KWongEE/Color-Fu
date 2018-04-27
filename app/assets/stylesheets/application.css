@@ -36,10 +36,15 @@ h2 {
 }
 
 .color {
-  width: 10em;
-  height: 10em;
+
+  width: 1em;
+  height: 4em;
   display: inline-block;
-  margin: 2em;
+}
+.tile {
+  border-style: solid;
+  border-color: white;
+  border-width: thick;
 }
 
 p {
@@ -52,7 +57,7 @@ p {
 .description {
   text-align: center;
   color: white
-  
+
 }
 
 div.field {
