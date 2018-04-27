@@ -1,5 +1,4 @@
 import React from 'react'
-import { browserHistory, Link } from 'react-router'
 
 const PaletteShow = (props) => {
   return(
