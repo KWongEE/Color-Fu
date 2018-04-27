@@ -7,7 +7,6 @@ class PalettesIndexContainer extends Component {
     this.state = {
       palettes: []
     }
-
   }
 
   componentDidMount() {
@@ -34,7 +33,7 @@ class PalettesIndexContainer extends Component {
           id = {palette.id}
           title = {palette.title}
           description = {palette.description}
-          hexcode = {palette.hexcode}
+          hexcodes = {palette.hexcodes}
         />
       )
     })

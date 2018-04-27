@@ -7,8 +7,7 @@ class PaletteFormContainer extends Component {
     super(props)
     this.state = {
       title: '',
-      description: '',
-      hexcode: '',
+      hexcodes: '',
       errors: {}
     }
 
@@ -17,14 +16,13 @@ class PaletteFormContainer extends Component {
     this.handleHexcodeChange = this.handleHexcodeChange.bind(this)
     this.handleClearForm = this.handleClearForm.bind(this)
     this.validateTitle = this.validateTitle.bind(this)
-    // this.validateDescription = this.validateDescription.bind(this)
     this.validateHexcode = this.validateHexcode.bind(this)
     this.addPalette = this.addPalette.bind(this)
   }
 
-  validateHexcode(shmugana) {
+  validateHexcode(hexcode) {
     // This is not good enough validation but we'll come back to it
-    if(shmugana.trim() === '') {
+    if(hexcode.trim() === '') {
       let newError = { body: 'You must enter text in the hexcode field.' }
       this.setState({ errors: Object.assign(this.state.errors, newError) })
       return false
@@ -37,8 +35,8 @@ class PaletteFormContainer extends Component {
   }
 
 
-  validateTitle(bugana) {
-    if(bugana.trim() === '') {
+  validateTitle(title) {
+    if(title.trim() === '') {
       let newError = { title: 'You must enter something in the title field.' }
       this.setState({ errors: Object.assign(this.state.errors, newError) })
       return false
@@ -52,7 +50,7 @@ class PaletteFormContainer extends Component {
 
   handleClearForm(event) {
     event.preventDefault()
-    this.setState({ title: "", description: "", hexcode: "", errors: {}})
+    this.setState({ title: "", description: "", hexcodes: "", errors: {}})
   }
 
   handleTitleChange(event) {
@@ -62,7 +60,7 @@ class PaletteFormContainer extends Component {
 
   handleHexcodeChange(event) {
     this.validateHexcode(event.target.value)
-    this.setState({ hexcode: event.target.value })
+    this.setState({ hexcodes: event.target.value })
   }
 
   addPalette(submission) {
@@ -70,7 +68,6 @@ class PaletteFormContainer extends Component {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-        //^ Tells rails to turn this body into json
       },
       body: JSON.stringify(submission)
     })
@@ -80,13 +77,12 @@ class PaletteFormContainer extends Component {
     event.preventDefault();
 
     if(this.validateTitle(this.state.title) &&
-       this.validateHexcode(this.state.hexcode) ) {
+       this.validateHexcode(this.state.hexcodes) ) {
 
       let formPayload = {
         palette: {
           title: this.state.title,
-          hexcode: this.state.hexcode,
-          // description: this.state.description
+          hexcodes: this.state.hexcodes
         }
       }
 
@@ -116,9 +112,9 @@ class PaletteFormContainer extends Component {
           handlerFunction={this.handleTitleChange}
         />
         <TextField
-          content={this.state.hexcode}
-          label="hexcode"
-          name="hexcode"
+          content={this.state.hexcodes}
+          label="hexcodes"
+          name="hexcodes"
           handlerFunction={this.handleHexcodeChange}
         />
 

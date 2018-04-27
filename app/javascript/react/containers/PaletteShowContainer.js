@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PaletteShow from '../components/PaletteShow'
 
-class PalettesShowContainer extends Component {
+class PaletteShowContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -33,11 +33,11 @@ class PalettesShowContainer extends Component {
         id={this.state.palette.id}
         palette={this.state.palette}
         title={this.state.palette.title}
-        hexcode={this.state.palette.hexcode}
+        hexcodes={this.state.palette.hexcodes}
         description = {this.state.palette.description}
       />
     )
   }
 }
 
-export default PalettesShowContainer
+export default PaletteShowContainer

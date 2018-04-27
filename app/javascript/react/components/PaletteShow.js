@@ -5,7 +5,7 @@ import PaletteTile from './PaletteTile'
 const PaletteShow = (props) => {
   let palette = props.palette
 
-  if(props.hexcode){
+  if(props.hexcodes){
     return(
       <div>
       <PaletteTile
@@ -13,10 +13,10 @@ const PaletteShow = (props) => {
         id = {palette.id}
         title = {palette.title}
         description = {palette.description}
-        hexcode = {palette.hexcode}
+        hexcodes = {palette.hexcodes}
       />
       <h2>{props.title}</h2>
-      <p>{props.hexcode}</p>
+      <p>{props.hexcodes}</p>
       <p className="description">
         {props.description}
       </p>
