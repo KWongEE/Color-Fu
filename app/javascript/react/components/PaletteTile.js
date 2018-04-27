@@ -7,7 +7,10 @@ const PaletteTile = (props) => {
 
   return(
     <div className="tile large-2 medium-3 small-4 columns end">
-      {hexcodes.map((hex, i) => <Color something={hex} key={i} />)}
+      <Link to={`/palettes/${props.id}`}>
+      {hexcodes.map((hex, i) => <Color colors={hex} key={i} />)}
+        <p>{props.title}</p>
+      </Link>
     </div>
   )
 }
