@@ -8,11 +8,11 @@
 
 
 palette_attributes = [
-  { title: "Fall Leaves", description: "blah blah blah", hexcode: ["#d54700","#00FFFF"] },
-  { title: "Just Red", hexcode: ["#00FFFF","#333333"]},
-  { title: "Marine", description: "Swim The Sea", hexcode: ["#00FFFF"]},
-  { title: "Autumnal", description: "Autumn Love", hexcode: ["#ff8800"] },
-  { title: "Grassy", hexcode: ["#0d6300"] }
+  { title: "Fall Leaves", description: "blah blah blah", hexcode: ["#d54700","#00FFFF","#820333","#F0433A","#540032"] },
+  { title: "Just Red", hexcode: ["#FF0000","#FF0000","#FF0000","#FF0000","#FF0000"] },
+  { title: "Marine", description: "Swim The Sea", hexcode: ["#00FFFF","#0C63FF","#0EE6C0","#14C7FF","#1089E8"] },
+  { title: "Autumnal", description: "Autumn Love", hexcode: ["#EC8D5E","#E36D60","#9C4368","#33223B","#211E2B"] },
+  { title: "Grassy", hexcode: ["#0d6300","#2E112D","#0d6300","#2E112D","#d54700"] }
 
 ]
 
