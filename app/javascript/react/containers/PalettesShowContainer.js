@@ -31,6 +31,7 @@ class PalettesShowContainer extends Component {
     return(
       <PaletteShow
         id={this.state.palette.id}
+        palette={this.state.palette}
         title={this.state.palette.title}
         hexcode={this.state.palette.hexcode}
         description = {this.state.palette.description}
