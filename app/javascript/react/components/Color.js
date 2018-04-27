@@ -4,7 +4,7 @@ import React from 'react'
 const Color = (props) => {
 
   return(
-    <div className="color" style={{backgroundColor: props.colors}}></div>
+    <div className="color" style={{backgroundColor: props.color}}></div>
   )
 }
 
