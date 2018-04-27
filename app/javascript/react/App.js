@@ -13,6 +13,7 @@ const App = (props) => {
         <IndexRoute component={PalettesIndexContainer} />
         <Route path='/palettes/new' component={PaletteFormContainer} />
         <Route path="/palettes/:id" component={PalettesShowContainer}/>
+        <Route path="*" component={PalettesIndexContainer} />
       </Route>
     </Router>
   )

@@ -12,7 +12,7 @@ class PalettesShowContainer extends Component {
   componentDidMount() {
     let paletteId = this.props.params.id
 
-    fetch(`http://localhost:3000/api/v1/palettes/${paletteId}`)
+    fetch(`/api/v1/palettes/${paletteId}`)
       .then(response => {
         if (response.ok) {
           return response
