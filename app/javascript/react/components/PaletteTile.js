@@ -8,8 +8,10 @@ const PaletteTile = (props) => {
   return(
     <div className="tile large-2 medium-3 small-4 columns end">
       <Link to={`/palettes/${props.id}`}>
-      {hexcodes}
-        <p>{props.title}</p>
+      <div className="colorTile">
+        {hexcodes}
+      </div>
+      <p>{props.title}</p>
       </Link>
     </div>
   )

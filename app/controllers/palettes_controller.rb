@@ -1,2 +1,4 @@
 class PalettesController < ApplicationController
+
+  
 end
