@@ -34,6 +34,11 @@ h2 {
   color: white;
   text-align: center;
 }
+.new-palette-form {
+  width: 40%;
+  position: fixed;
+  left: 10px;
+}
 
 .colorTile {
   border-radius: 5px;
@@ -43,20 +48,44 @@ h2 {
   display: inline-block;
   border-style: solid;
   border-width: 0.5px;
-  border-color: white;
+  border-color: grey;
+  margin: auto;
+}
+
+.colorShow {
+  border-radius: 5px;
+  overflow:hidden;
+  width: 100%;
+  height: 10em;
+  display: inline-block;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: grey;
+}
+
+.show{
+  width: 50%;
+  height: 55%;
+  display: inline-block;
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .color{
   width: 20%;
-  height: 4em;
+  height: 10em;
   display: inline-block;
 }
 
 p {
   color: white;
-  font-size: 12px;
+  font-size: 24px;
   text-align: center;
-  font-family: 'Comic Sans Ms'
+  font-family: 'Palatino MS'
 }
 
 .description {
