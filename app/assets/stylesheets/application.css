@@ -15,3 +15,60 @@
  *= require foundation_and_overrides
 
  */
+ h1 {
+   color: white;
+   text-align: center;
+   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+ }
+a {
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-align: center;
+}
+
+body {
+  background-color: #262626
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+.colorTile {
+  border-radius: 5px;
+  overflow:hidden;
+  width: 100%;
+  height: 4em;
+  display: inline-block;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: white;
+}
+
+.color{
+  width: 20%;
+  height: 4em;
+  display: inline-block;
+}
+
+p {
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  font-family: 'Comic Sans Ms'
+}
+
+.description {
+  text-align: center;
+  color: white
+
+}
+
+div.field {
+  margin: 1em 3em;
+}
+
+div.actions {
+  text-align: center;
+}
