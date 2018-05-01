@@ -17,12 +17,14 @@
  */
  h1 {
    color: white;
+   text-align: center;
    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
  }
- 
+
 a {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-align: center;
 }
 
 body {
@@ -31,15 +33,71 @@ body {
 
 h2 {
   color: white;
+  text-align: center;
+}
+.new-palette-form {
+  width: 40%;
+  height:10%;
+  padding-left: 20px;
 }
 
-div {
-  width: 10em;
-  height: 6em;
+.color-picker {
+  padding-left: 20px;
 }
 
-label {
-  font-family: cursive;
+.colorTile {
+  border-radius: 5px;
+  overflow:hidden;
+  width: 100%;
+  height: 4em;
+  display: inline-block;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: grey;
+  margin: auto;
+}
+
+.colorShow {
+  border-radius: 5px;
+  overflow:hidden;
+  width: 100%;
+  height: 10em;
+  display: inline-block;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: grey;
+}
+
+.show{
+  width: 50%;
+  height: 55%;
+  display: inline-block;
+  padding-left: 20px;
+}
+
+.color{
+  width: 20%;
+  height: 10em;
+  display: inline-block;
+}
+
+p {
   color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 24px;
+  text-align: center;
+  font-family: 'Palatino MS'
+}
+
+.description {
+  text-align: center;
+  color: white
+
+}
+
+div.field {
+  margin: 1em 3em;
+}
+
+div.actions {
+  text-align: center;
 }

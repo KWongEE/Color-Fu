@@ -1,5 +1,0 @@
-  <h1>Palettes: </h1>
-
-  <% @palettes.each do |palette| %>
-    <div style="background-color: <%=palette.hexcode%>"><%= link_to  "#{palette.title}", palette_path(palette)%></div><br>
-  <% end %>

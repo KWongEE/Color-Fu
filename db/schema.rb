@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_04_24_174902) do
   create_table "palettes", force: :cascade do |t|
     t.string "title", null: false
     t.text "description"
-    t.string "hexcode"
+    t.text "hexcodes", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
