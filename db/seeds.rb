@@ -24,7 +24,6 @@ palette_attributes = [
  { title: "zen and tea", hexcodes: ["#14222A","#99AA6B", "#C2D58D", "#E5EFD8", "#F8FEE3"] },
  { title: "Buddha in Rain", hexcodes: ["#EF8533","#F9D958", "#CDCB65", "#96B064", "#1D2B32"] },
  { title: "Mountains in Burma", hexcodes: ["#384242","#B9E9B3", "#FFFEA9", "#CDDC6A", "#818F2B"] }
-
 ]
 
 palette_attributes.each do |a|

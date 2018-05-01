@@ -34,6 +34,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'dotenv-rails'
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "faker"
 end
 
 group :development do
@@ -43,7 +46,7 @@ group :development do
 end
 
 group :test do
-  gem 'coveralls', require: false
+  gem 'coveralls', require: true
 end
 
 
