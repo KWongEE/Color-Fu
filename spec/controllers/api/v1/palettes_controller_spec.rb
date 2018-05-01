@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::PalettesController, type: :controller do
-  describe "GET#index" do
-    before(:each) do
-      Palette.create(title: "Fall Leaves", description: "Basic white girl drinking a Pumpkin Spiced Latte on the first day of Fall.", hexcodes: ["#E8BA41","#E69039", "#E2642B", "#B0361C", "#68140C"])
-      Palette.create(title: "Buddha in Rain", description: "A soothing palette of blues.", hexcodes: ["#EF8533","#F9D958", "#CDCB65", "#96B064", "#1D2B32"])
-    end
+  before(:each) do
+    user1 = User.create(email: "sidneycastro96@gmail.com", password: "password")
+    palette1 = Palette.create(title: "Fall Leaves", description: "Basic white girl drinking a Pumpkin Spiced Latte on the first day of Fall.", hexcodes: ["#E8BA41","#E69039", "#E2642B", "#B0361C", "#68140C"], user: user1)
+    palette2 = Palette.create(title: "Buddha in Rain", description: "A soothing palette of blues.", hexcodes: ["#EF8533","#F9D958", "#CDCB65", "#96B064", "#1D2B32"], user: user1)
+  end
 
+  describe "GET#index" do
     it "serves up a JSON with all of my palette data" do
       get :index
       data = JSON.parse(response.body)
@@ -27,23 +28,47 @@ RSpec.describe Api::V1::PalettesController, type: :controller do
     end
   end
 
-  describe "GET#show/:id" do
-    let!(:palette1) { Palette.create(title: "Aqua Blue", description: "As blue as the sea", hexcodes: ["#00FFFF", "#99AA6B", "#C2D58D", "#E5EFD8", "#F8FEE3"]) }
+  describe "GET#show" do
+    before(:each) do
+      @user = User.create(email: "sidneycastro96@gmail.com", password: "password")
+      @palette = Palette.create(id: 1, title: "Fall Leaves", description: "Basic white girl drinking a Pumpkin Spiced Latte on the first day of Fall.", hexcodes: ["#E8BA41","#E69039", "#E2642B", "#B0361C", "#68140"], user: @user)
 
+    end
     it "should return a palette" do
-      get :show, params:{id: palette1.id}
+      get :show,  params: { id: @palette.id }
       returned_json = JSON.parse(response.body)
 
       expect(response.status).to eq 200
       expect(response.content_type).to eq "application/json"
 
-      expect(returned_json["palette"]["title"]).to eq palette1.title
-      expect(returned_json["palette"]["description"]).to eq palette1.description
-      expect(returned_json["palette"]["hexcodes"]).to eq palette1.hexcodes
-      expect(returned_json["palette"]["id"]).to eq palette1.id
+      expect(returned_json["palette"]["title"]).to eq @palette.title
+      expect(returned_json["palette"]["description"]).to eq @palette.description
+      expect(returned_json["palette"]["hexcodes"]).to eq @palette.hexcodes
+      expect(returned_json["palette"]["id"]).to eq @palette.id
+      expect(returned_json["palette"]["user_id"]).to eq @user.id
 
       expect(returned_json).to be_kind_of(Hash)
       expect(returned_json).to_not be_kind_of(Array)
+    end
+  end
+
+  describe "POST#create" do
+    before(:each) do
+      @user = User.create(email: "sidneycastro96@gmail.com", password: "password")
+      sign_in_as(@user)
+      @palette = Palette.create( title: "Fall Leaves", description: "Basic white girl drinking a Pumpkin Spiced Latte on the first day of Fall.", hexcodes: ["#E8BA41","#E69039", "#E2642B", "#B0361C", "#68140"], user: @user)
+    end
+
+    it "should create a new palette" do
+      post(:create, params: {palette: {title: "Fall Leaves", hexcodes: ["#E8BA41","#E69039", "#E2642B", "#B0361C", "#68140"]}} )
+      returned_json = JSON.parse(response.body)
+
+      expect(response.status).to eq 200
+      expect(response.content_type).to eq "application/json"
+
+      expect(returned_json.length).to eq 1
+      expect(returned_json["palette"]["title"]).to eq @palette_params.title
+      expect(returned_json["palette"]["hexcodes"]).to eq @palette_params.hexcodes
     end
   end
 end

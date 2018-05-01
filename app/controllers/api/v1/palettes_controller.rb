@@ -1,6 +1,6 @@
 class Api::V1::PalettesController < ApplicationController
   skip_before_action :verify_authenticity_token
-  
+
   def index
     render json: Palette.all
   end
@@ -10,7 +10,10 @@ class Api::V1::PalettesController < ApplicationController
   end
 
   def create
-    palette = Palette.create(palette_params)
+    palette = Palette.new(palette_params)
+    palette.user = current_user
+    palette.save
+    render json: palette
   end
 
   private
