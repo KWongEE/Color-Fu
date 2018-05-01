@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import PaletteShow from '../components/PaletteShow'
+import ReviewsIndexContainer from './ReviewsIndexContainer'
+import ReviewsFormContainer from './ReviewsFormContainer'
 
 class PaletteShowContainer extends Component {
   constructor(props) {
@@ -29,13 +31,23 @@ class PaletteShowContainer extends Component {
 
   render() {
     return(
-      <PaletteShow
-        id={this.state.palette.id}
-        palette={this.state.palette}
-        title={this.state.palette.title}
-        hexcodes={this.state.palette.hexcodes}
-        description = {this.state.palette.description}
-      />
+      <div>
+        <PaletteShow
+          id={this.state.palette.id}
+          palette={this.state.palette}
+          title={this.state.palette.title}
+          hexcodes={this.state.palette.hexcodes}
+          description = {this.state.palette.description}
+        />
+
+        <ReviewsIndexContainer
+          reviews={this.state.palette.reviews}
+        />
+
+        <ReviewsFormContainer
+
+        />
+      </div>
     )
   }
 }

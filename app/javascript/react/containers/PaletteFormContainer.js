@@ -92,7 +92,6 @@ class PaletteFormContainer extends Component {
   }
 
   render() {
-    console.log(this.props)
     let errorDiv;
     let errorItems;
     if (Object.keys(this.state.errors).length > 0) {

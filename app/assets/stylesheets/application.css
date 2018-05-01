@@ -35,6 +35,11 @@ h2 {
   text-align: center;
 }
 
+.review-form {
+  color: white;
+  font-family: "Georgia"
+}
+
 .colorTile {
   border-radius: 5px;
   overflow:hidden;
@@ -56,7 +61,7 @@ p {
   color: white;
   font-size: 12px;
   text-align: center;
-  font-family: 'Comic Sans Ms'
+  font-family: 'Georgia'
 }
 
 .description {

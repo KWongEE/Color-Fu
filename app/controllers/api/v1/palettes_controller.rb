@@ -8,7 +8,6 @@ class Api::V1::PalettesController < ApplicationController
     render json: Palette.find(params[:id])
   end
 
-
   def create
     palette = Palette.create(palette_params)
   end
