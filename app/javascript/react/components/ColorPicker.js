@@ -81,18 +81,14 @@ class ColorPicker extends React.Component {
       <ShowTile
         hexcodes = {this.state.hexcodes}
       />
-      <br></br>
-      <br></br>
-      <br></br>
-
-
+      <div className ="color-picker">
       <PhotoshopPicker
         color={ this.state.current}
         onChangeComplete={ this.handleChangeComplete }
         onAccept={ this.handleColorSubmit }
         onCancel={ this.handleCancel }
       />
-
+      </div>
       <form className="new-palette-form callout">
         <TextField
           content={this.state.title}

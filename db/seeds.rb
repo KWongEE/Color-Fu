@@ -23,7 +23,8 @@ palette_attributes = [
  { title: "Kinderszenen", hexcodes: ["#1A456F","#4B86A2", "#C1D8B4", "#EFCC46", "#DF572B"] },
  { title: "zen and tea", hexcodes: ["#14222A","#99AA6B", "#C2D58D", "#E5EFD8", "#F8FEE3"] },
  { title: "Buddha in Rain", hexcodes: ["#EF8533","#F9D958", "#CDCB65", "#96B064", "#1D2B32"] },
- { title: "Mountains of Burma", hexcodes: ["#384242","#B9E9B3", "#FFFEA9", "#CDDC6A", "#818F2B"] }
+ { title: "Mountains of Burma", hexcodes: ["#384242","#B9E9B3", "#FFFEA9", "#CDDC6A", "#818F2B"] },
+ { title: "Cotton Candy", hexcodes: ["#86D7DE","#FD8E8D", "#E5BD75", "#334A5B", "#86D7DE"] }
 
 ]
 
