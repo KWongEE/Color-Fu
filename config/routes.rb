@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users
 
   namespace :api do
     namespace :v1 do
-      resources :palettes
+      resources :palettes 
     end
   end
 
