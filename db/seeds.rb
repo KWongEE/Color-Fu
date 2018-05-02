@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-user = User.create(email:"ColorLuvR@colors.com", password: "colors")
+user = User.create(email:"guest@guest.com", password: "colors")
 
 palette_attributes = [
  { title: "Fall Leaves", hexcodes: ["#E8BA41","#E69039", "#E2642B", "#B0361C", "#68140C"], user: user },
