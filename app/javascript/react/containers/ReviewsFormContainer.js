@@ -11,6 +11,7 @@ class ReviewsFormContainer extends Component {
     this.handleBodyChange = this.handleBodyChange.bind(this)
     this.handleClearForm = this.handleClearForm.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.addReview = this.addReview.bind(this)
   }
 
   handleBodyChange(event) {
@@ -22,14 +23,29 @@ class ReviewsFormContainer extends Component {
     this.setState({ body: '' })
   }
 
+  addReview(submission) {
+    let paletteId = this.props.id
+    fetch(`/api/v1/palettes/${paletteId}/reviews`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify(submission)
+    })
+  }
+
   handleSubmit(event) {
     event.preventDefault()
 
     let formPayload = {
-      review: this.state.body
+      review: {
+        review: this.state.body,
+        palette_id: this.props.id
+      }
     }
 
-    alert(formPayload)
+    this.addReview(formPayload)
   }
 
   render() {

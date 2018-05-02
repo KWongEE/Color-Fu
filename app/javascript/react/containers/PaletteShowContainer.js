@@ -40,12 +40,12 @@ class PaletteShowContainer extends Component {
           description = {this.state.palette.description}
         />
 
-        <ReviewsIndexContainer
-          reviews={this.state.palette.reviews}
+        <ReviewsFormContainer
+          id={this.state.palette.id}
         />
 
-        <ReviewsFormContainer
-
+        <ReviewsIndexContainer
+          reviews={this.state.palette.reviews}
         />
       </div>
     )

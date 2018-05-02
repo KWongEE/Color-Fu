@@ -10,12 +10,6 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :api do
-    namespace :v1 do
-      resources :reviews
-    end
-  end
-
   root 'static_pages#index'
   get "*path", to: "static_pages#index"
 end

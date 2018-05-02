@@ -21,5 +21,5 @@ class Api::V1::PalettesController < ApplicationController
 
   def palette_params
      params.require(:palette).permit(:title, :hexcodes => [])
-     end
+  end
 end
