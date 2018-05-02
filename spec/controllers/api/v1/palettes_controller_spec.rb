@@ -55,20 +55,18 @@ RSpec.describe Api::V1::PalettesController, type: :controller do
   describe "POST#create" do
     before(:each) do
       @user = User.create(email: "sidneycastro96@gmail.com", password: "password")
-      sign_in_as(@user)
+      sign_in(@user)
       @palette = Palette.create( title: "Fall Leaves", description: "Basic white girl drinking a Pumpkin Spiced Latte on the first day of Fall.", hexcodes: ["#E8BA41","#E69039", "#E2642B", "#B0361C", "#68140"], user: @user)
     end
 
     it "should create a new palette" do
       post(:create, params: {palette: {title: "Fall Leaves", hexcodes: ["#E8BA41","#E69039", "#E2642B", "#B0361C", "#68140"]}} )
       returned_json = JSON.parse(response.body)
-
       expect(response.status).to eq 200
       expect(response.content_type).to eq "application/json"
-
       expect(returned_json.length).to eq 1
-      expect(returned_json["palette"]["title"]).to eq @palette_params.title
-      expect(returned_json["palette"]["hexcodes"]).to eq @palette_params.hexcodes
+      expect(returned_json["palette"]["title"]).to eq @palette.title
+      expect(returned_json["palette"]["hexcodes"]).to eq @palette.hexcodes
     end
   end
 end

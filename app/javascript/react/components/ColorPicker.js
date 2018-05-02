@@ -45,6 +45,7 @@ class ColorPicker extends React.Component {
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'same-origin',
       body: JSON.stringify(submission)
     })
   }

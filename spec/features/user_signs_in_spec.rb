@@ -1,6 +1,4 @@
 require 'rails_helper'
-require 'pry'
-
 
 feature 'user signs in', %Q{
   As a signed up user

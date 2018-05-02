@@ -1,5 +1,6 @@
 class Api::V1::PalettesController < ApplicationController
   skip_before_action :verify_authenticity_token
+  # before_action :authenticate_user!, except: [:index, :show]
 
   def index
     render json: Palette.all
