@@ -7,7 +7,7 @@ class PaletteFormContainer extends Component {
     super(props)
     this.state = {
       title: '',
-      hexcodes: '',
+      hexcodes: [],
       errors: {}
     }
 

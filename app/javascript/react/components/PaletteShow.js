@@ -1,6 +1,6 @@
 import React from 'react'
 import Color from './Color'
-import PaletteTile from './PaletteTile'
+import ShowTile from './ShowTile'
 
 const PaletteShow = (props) => {
   let palette = props.palette
@@ -9,18 +9,13 @@ const PaletteShow = (props) => {
   if(props.hexcodes){
     return(
       <div>
-      <PaletteTile
+      <ShowTile
         key = {palette.id}
         id = {palette.id}
         title = {palette.title}
         description = {palette.description}
         hexcodes = {palette.hexcodes}
       />
-      <h2>{props.title}</h2>
-      <li>{props.hexcodes}</li>
-      <p className="description">
-        {props.description}
-      </p>
     </div>
     )
   } else {
