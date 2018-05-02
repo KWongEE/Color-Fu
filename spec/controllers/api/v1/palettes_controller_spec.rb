@@ -54,7 +54,7 @@ RSpec.describe Api::V1::PalettesController, type: :controller do
 
   describe "POST#create" do
     before(:each) do
-      @user = User.create(email: "sidneycastro96@gmail.com", password: "password")
+      @user = User.create(email: "sidneycastro42@gmail.com", password: "password")
       sign_in(@user)
       @palette = Palette.create( title: "Fall Leaves", description: "Basic white girl drinking a Pumpkin Spiced Latte on the first day of Fall.", hexcodes: ["#E8BA41","#E69039", "#E2642B", "#B0361C", "#68140"], user: @user)
     end
@@ -65,7 +65,6 @@ RSpec.describe Api::V1::PalettesController, type: :controller do
       expect(response.status).to eq 200
       expect(response.content_type).to eq "application/json"
       expect(returned_json.length).to eq 1
-      binding.pry
       expect(returned_json["palettes"].last["title"]).to eq @palette.title
       expect(returned_json["palettes"].last["hexcodes"]).to eq @palette.hexcodes
     end
