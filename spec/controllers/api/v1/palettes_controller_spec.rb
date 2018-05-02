@@ -65,8 +65,9 @@ RSpec.describe Api::V1::PalettesController, type: :controller do
       expect(response.status).to eq 200
       expect(response.content_type).to eq "application/json"
       expect(returned_json.length).to eq 1
-      expect(returned_json["palette"]["title"]).to eq @palette.title
-      expect(returned_json["palette"]["hexcodes"]).to eq @palette.hexcodes
+      binding.pry
+      expect(returned_json["palettes"].last["title"]).to eq @palette.title
+      expect(returned_json["palettes"].last["hexcodes"]).to eq @palette.hexcodes
     end
   end
 end

@@ -10,14 +10,14 @@ class Api::V1::PalettesController < ApplicationController
   end
 
   def create
-    @palette = Palette.new(palette_params)
+    palette = Palette.new(palette_params)
     if current_user
-      @palette.user = current_user
+      palette.user = current_user
     else
-      @palette.user_id = 1
+      palette.user_id = 1
     end
 
-    if @palette.save
+    if palette.save
       render json: Palette.all
     else
       render json: {message: "Did not save."}
