@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PaletteTile from '../components/PaletteTile'
+import SearchBar from '../components/SearchBar'
 
 class PalettesIndexContainer extends Component {
   constructor(props) {
@@ -26,6 +27,13 @@ class PalettesIndexContainer extends Component {
   }
 
   render() {
+
+    return(
+      <div>
+        <SearchBar />
+      </div>
+    )
+
     let palettes = this.state.palettes.map(palette => {
       return(
         <PaletteTile
