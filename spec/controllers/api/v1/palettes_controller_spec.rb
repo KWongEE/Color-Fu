@@ -54,7 +54,7 @@ RSpec.describe Api::V1::PalettesController, type: :controller do
     end
   end
 
-  describe "POST#create" do
+  xdescribe "POST#create" do
     before(:each) do
       @user = User.create(email: "sidneycastro96@gmail.com", password: "password")
       @palette = Palette.create( title: "Fall Leaves", description: "Basic white girl drinking a Pumpkin Spiced Latte on the first day of Fall.", hexcodes: ["#E8BA41","#E69039", "#E2642B", "#B0361C", "#68140"], user: @user)
