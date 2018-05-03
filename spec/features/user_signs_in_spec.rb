@@ -2,12 +2,12 @@ require 'rails_helper'
 require 'pry'
 
 
-feature 'user signs in', %Q{
+xfeature 'user signs in', %Q{
   As a signed up user
   I want to sign in
   So that I can regain access to my account
 } do
-  xscenario 'specify valid credentials' do
+  scenario 'specify valid credentials' do
     user = FactoryBot.create(:user)
 
     visit new_user_session_path
