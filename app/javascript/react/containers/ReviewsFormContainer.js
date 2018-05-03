@@ -34,7 +34,7 @@ class ReviewsFormContainer extends Component {
       credentials: 'same-origin',
       body: JSON.stringify(submission)
     }).then( () => {
-      browserHistory.push('/palettes/:id')
+      browserHistory.push(`/palettes/${paletteId}`)
     })
   }
 

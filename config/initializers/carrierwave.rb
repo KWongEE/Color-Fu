@@ -8,11 +8,9 @@ CarrierWave.configure do |config|
   if Rails.env.staging? || Rails.env.production?
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
-      :provider => 'AWS'
-      :aws_access_key_id => ENV["AWS_ID"]
-      :aws_secret_access_key => ENV["AWS_KEY"]
-      :region => 'us-east-1'
-
+      provider: 'AWS',
+      aws_access_key_id: ENV["AWS_ID"],
+      aws_secret_access_key: ENV["AWS_KEY"]
     }
     config.fog_directory = ENV['colorfuphoto']
   else

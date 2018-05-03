@@ -2,7 +2,7 @@ class Api::V1::PalettesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-   render json: Palette.all
+    render json: Palette.all.reverse
   end
 
   def show
