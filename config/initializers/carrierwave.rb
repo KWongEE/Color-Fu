@@ -8,7 +8,6 @@ CarrierWave.configure do |config|
   if Rails.env.staging? || Rails.env.production?
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
-      
     }
     config.fog_directory = ENV['colorfuphoto']
   else

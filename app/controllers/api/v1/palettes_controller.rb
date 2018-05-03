@@ -2,7 +2,7 @@ class Api::V1::PalettesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    render json: Palette.all
+   render json: Palette.all
   end
 
   def show
@@ -10,23 +10,23 @@ class Api::V1::PalettesController < ApplicationController
   end
 
   def create
-    palette = Palette.new(palette_params)
-    if current_user
-      palette.user = current_user
-    else
-      palette.user_id = 1
-    end
+   palette = Palette.new(palette_params)
+   if current_user
+     palette.user = current_user
+   else
+     palette.user_id = 1
+   end
 
-    if palette.save
-      render json: Palette.all
-    else
-      render json: {message: "Did not save."}
-    end
+   if palette.save
+     render json: Palette.all
+   else
+     render json: {message: "Did not save."}
+   end
   end
 
-  private
+ private
 
-  def palette_params
-     params.require(:palette).permit(:title, :hexcodes => [])
-  end
-end
+   def palette_params
+      params.require(:palette).permit(:title, :hexcodes => [])
+   end
+ end
