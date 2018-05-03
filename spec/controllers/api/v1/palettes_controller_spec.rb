@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+
+
 RSpec.describe Api::V1::PalettesController, type: :controller do
   before(:each) do
     user1 = User.create(email: "sidneycastro96@gmail.com", password: "password")
@@ -32,8 +34,8 @@ RSpec.describe Api::V1::PalettesController, type: :controller do
     before(:each) do
       @user = User.create(email: "sidneycastro96@gmail.com", password: "password")
       @palette = Palette.create(id: 1, title: "Fall Leaves", description: "Basic white girl drinking a Pumpkin Spiced Latte on the first day of Fall.", hexcodes: ["#E8BA41","#E69039", "#E2642B", "#B0361C", "#68140"], user: @user)
-
     end
+
     it "should return a palette" do
       get :show,  params: { id: @palette.id }
       returned_json = JSON.parse(response.body)
@@ -52,11 +54,16 @@ RSpec.describe Api::V1::PalettesController, type: :controller do
     end
   end
 
-  describe "POST#create" do
+  xdescribe "POST#create" do
     before(:each) do
       @user = User.create(email: "sidneycastro42@gmail.com", password: "password")
       sign_in(@user)
       @palette = Palette.create( title: "Fall Leaves", description: "Basic white girl drinking a Pumpkin Spiced Latte on the first day of Fall.", hexcodes: ["#E8BA41","#E69039", "#E2642B", "#B0361C", "#68140"], user: @user)
+    end
+
+    it "should have a current_user" do
+      session[:user_id] = @user.id
+      expect(controller.current_user).to eq(@user)
     end
 
     it "should create a new palette" do
