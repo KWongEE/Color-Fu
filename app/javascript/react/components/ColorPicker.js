@@ -47,6 +47,8 @@ class ColorPicker extends React.Component {
       },
       credentials: 'same-origin',
       body: JSON.stringify(submission)
+    }).then( () => {
+      browserHistory.push('/')
     })
   }
 
@@ -71,7 +73,6 @@ class ColorPicker extends React.Component {
           }
         }
         this.addPalette(formPayload)
-        browserHistory.push('/')
       } else {
         alert("Fill out the fields!")
       }
@@ -83,12 +84,12 @@ class ColorPicker extends React.Component {
         hexcodes = {this.state.hexcodes}
       />
       <div className ="color-picker">
-      <PhotoshopPicker
-        color={ this.state.current}
-        onChangeComplete={ this.handleChangeComplete }
-        onAccept={ this.handleColorSubmit }
-        onCancel={ this.handleCancel }
-      />
+        <PhotoshopPicker
+          color={ this.state.current}
+          onChangeComplete={ this.handleChangeComplete }
+          onAccept={ this.handleColorSubmit }
+          onCancel={ this.handleCancel }
+        />
       </div>
       <form className="new-palette-form callout">
         <TextField
