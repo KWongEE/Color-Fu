@@ -30,6 +30,14 @@ class PalettesIndexContainer extends Component {
      .catch(error => console.error(`${error.message}`))
   }
 
+  delete(item){
+     let newState = this.state.palettes.slice();
+     if (newState.indexOf(item) > -1) {
+       newState.splice(newState.indexOf(item), 1);
+       this.setState({palettes: newState})
+     }
+   }
+
   handleChange(event) {
     this.setState({search: event.target.value})
   }
@@ -59,6 +67,7 @@ class PalettesIndexContainer extends Component {
   render() {
     let finalResults = this.state.finalResults.map(palette => {
       return(
+        <div>
         <PaletteTile
           key = {palette.id}
           id = {palette.id}
@@ -66,6 +75,8 @@ class PalettesIndexContainer extends Component {
           description = {palette.description}
           hexcodes = {palette.hexcodes}
         />
+
+      </div>
       )
     })
     let palettes = this.state.palettes.map(palette => {

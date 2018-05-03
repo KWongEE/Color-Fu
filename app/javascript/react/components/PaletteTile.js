@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import Color from './Color'
 
+
 const PaletteTile = (props) => {
   let hexcodes = props.hexcodes.map((hex, i) => <Color color={hex} key={i} />)
 

@@ -2,13 +2,16 @@ import React, { Component } from 'react'
 import PaletteShow from '../components/PaletteShow'
 import ReviewsIndexContainer from './ReviewsIndexContainer'
 import ReviewsFormContainer from './ReviewsFormContainer'
+import StarRatingComponent from 'react-star-rating-component';
 
 class PaletteShowContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      palette: {}
+      palette: {},
+      rating: 1
     }
+    this.onStarClick = this.onStarClick.bind(this)
   }
 
   componentDidMount() {
@@ -29,7 +32,13 @@ class PaletteShowContainer extends Component {
       .catch(error => console.error(`${error.message}`))
   }
 
+  onStarClick(nextValue, prevValue, name) {
+   this.setState({rating: nextValue});
+  }
+
   render() {
+    const { rating } = this.state;
+
     return(
       <div>
         <PaletteShow
@@ -39,6 +48,13 @@ class PaletteShowContainer extends Component {
           hexcodes={this.state.palette.hexcodes}
           description = {this.state.palette.description}
         />
+
+         <StarRatingComponent
+           name="rate1"
+           starCount={5}
+           value={rating}
+           onStarClick={this.onStarClick.bind(this)}
+         />
 
         <ReviewsFormContainer
           id={this.state.palette.id}
