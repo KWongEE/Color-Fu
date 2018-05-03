@@ -15,6 +15,15 @@
 *= require foundation_and_overrides
 
 */
+
+/* .head-background {
+  background-img: url('images/Wedding-Collections-Header.jpg')
+  background-repeat: no-repeat;
+  width: auto;
+  background-size: cover;
+  height: 400px;
+} */
+
 h1 {
   color: white;
   text-align: center;
@@ -29,10 +38,20 @@ h1 {
 a {
   color: white;
   text-align: center;
+  font-family: 'Century Schoolbook';
+  font-size: 1em;
+
 }
+
 
 body {
   background-color: #262626
+}
+
+#header-background {
+  background-image: url("images/colorful-dots-artistic-abstract-website-header.jpg");
+  height: 7em;
+
 }
 
 h2 {
@@ -77,6 +96,8 @@ h2 {
   border-color: grey;
 }
 
+
+}
 .show{
   width: 50%;
   height: 55%;
@@ -102,6 +123,7 @@ p {
   color: white
 }
 
+
 div.field {
   margin: 1em 3em;
 }
@@ -110,5 +132,23 @@ div.actions {
   text-align: center;
 }
 
+#submit {
+  height: 37px;
+}
+
 .navbar {
+  margin-left: 27em;
+}
+
+.page-header {
+
+}
+
+#searchbar {
+  display: inline-flex;
+  padding-left: 48em;
+  margin-top: -1em;
+}
+#search {
+  width: 13em;
 }

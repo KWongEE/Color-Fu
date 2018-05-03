@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import PaletteTile from '../components/PaletteTile'
+import React, {Component} from 'react'
+import PaletteTile from "./PaletteTile"
 
-class PalettesIndexContainer extends Component {
+class SearchBar extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -12,8 +12,7 @@ class PalettesIndexContainer extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.filteredPalettes = this.filteredPalettes.bind(this)
-  }
-
+}
   componentDidMount() {
    fetch('api/v1/palettes')
      .then(response => {
@@ -24,7 +23,7 @@ class PalettesIndexContainer extends Component {
        }
      })
      .then(response => response.json())
-     .then(paletteObjs => {
+     .then(paletteObjs =>{
        this.setState( { palettes: paletteObjs.palettes } )
      })
      .catch(error => console.error(`${error.message}`))
@@ -33,7 +32,6 @@ class PalettesIndexContainer extends Component {
   handleChange(event) {
     this.setState({search: event.target.value})
   }
-
   handleSubmit(event) {
     event.preventDefault()
 
@@ -55,7 +53,6 @@ class PalettesIndexContainer extends Component {
       this.setState({ finalResults: searchResults })
     })
   }
-
   render() {
     let finalResults = this.state.finalResults.map(palette => {
       return(
@@ -68,18 +65,6 @@ class PalettesIndexContainer extends Component {
         />
       )
     })
-    let palettes = this.state.palettes.map(palette => {
-      return(
-        <PaletteTile
-            key = {palette.id}
-            id = {palette.id}
-            title = {palette.title}
-            description = {palette.description}
-            hexcodes = {palette.hexcodes}
-        />
-      )
-    })
-
     return(
      <div id="index-container">
        <div id="searchbar">
@@ -88,19 +73,18 @@ class PalettesIndexContainer extends Component {
            type='text'
            value={this.state.search}
            onChange={this.handleChange}
-           placeholder="Search Palettes"
+           placeholder="Enter search terms"
          />
-         <input type="submit" id="submit" value="Go" onClick= {this.handleSubmit}/>
+         <input type = 'submit' value = 'Search' onClick = {this.handleSubmit}/>
        </div>
        <div className="row">
          {finalResults}
-       </div>
-       <div className="row">
-         {palettes}
        </div>
      </div>
    )
   }
 }
 
-export default PalettesIndexContainer
+
+
+export default SearchBar
