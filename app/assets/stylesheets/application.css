@@ -45,22 +45,22 @@ a {
 
 
 body {
-  background-color: #262626
+  background-color: #262626;
 }
 
 #header-background {
   background-image: url("images/colorful-dots-artistic-abstract-website-header.jpg");
   height: 7em;
-
 }
 
 h2 {
   color: white;
   text-align: center;
 }
+
 .new-palette-form {
   width: 40%;
-  height:10%;
+  height: 10%;
   padding-left: 20px;
 }
 
@@ -70,12 +70,12 @@ h2 {
 
 .review-form {
   color: white;
-  font-family: "Georgia"
+  font-family: "Georgia";
 }
 
 .colorTile {
   border-radius: 5px;
-  overflow:hidden;
+  overflow: hidden;
   width: 100%;
   height: 4em;
   display: inline-block;
@@ -87,7 +87,7 @@ h2 {
 
 .colorShow {
   border-radius: 5px;
-  overflow:hidden;
+  overflow: hidden;
   width: 100%;
   height: 10em;
   display: inline-block;
@@ -96,9 +96,7 @@ h2 {
   border-color: grey;
 }
 
-
-}
-.show{
+.show {
   width: 50%;
   height: 55%;
   display: inline-block;
@@ -115,12 +113,12 @@ p {
   color: white;
   font-size: 24px;
   text-align: center;
-  font-family: 'Georgia'
+  font-family: 'Georgia';
 }
 
 .description {
   text-align: center;
-  color: white
+  color: white;
 }
 
 
@@ -145,6 +143,7 @@ div.actions {
   padding-left: 48em;
   margin-top: -1em;
 }
+
 #search {
   width: 13em;
 }
