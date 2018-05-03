@@ -88,9 +88,9 @@ class PalettesIndexContainer extends Component {
            type='text'
            value={this.state.search}
            onChange={this.handleChange}
-           placeholder="Enter search terms"
+           placeholder="Search Palettes"
          />
-         <input type = 'submit' value = 'Search' onClick = {this.handleSubmit}/>
+         <input type="submit" id="submit" value="Go" onClick= {this.handleSubmit}/>
        </div>
        <div className="row">
          {finalResults}
