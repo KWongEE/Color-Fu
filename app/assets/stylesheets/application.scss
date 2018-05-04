@@ -16,11 +16,22 @@
 
 */
 .title {
-  padding-top: 1em;
+  padding-top: .25em;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 4em;
+}
+
+.flash {
+  color: yellow;
 }
 
 a:hover {
   color: inherit;
+}
+
+.create {
+  padding-left: 2em;
+  padding-top: 1.5em;
 }
 
 .left {
@@ -106,9 +117,9 @@ h2 {
 
 p {
   color: white;
-  font-size: 24px;
+  font-size: 16px;
   text-align: center;
-  font-family: 'Georgia';
+  font-family: 'Avenir Next';
 }
 
 .description {
@@ -124,10 +135,17 @@ div.actions {
   text-align: center;
 }
 
-.navbar {
-  margin-left: 27em;
-}
-
 .row {
   padding-top: 1.15em;
+}
+
+.search {
+  width: 18em;
+  margin: auto;
+}
+
+.searchbar {
+  width: 50%;
+  padding-top: .75em;
+  margin: auto;
 }

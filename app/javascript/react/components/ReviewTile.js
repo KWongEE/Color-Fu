@@ -1,7 +1,6 @@
 import React from 'react'
 
 const ReviewTile = (props) => {
-  debugger;
   let email = props.userEmail.split("@").pop();
 
   return(
