@@ -33,3 +33,5 @@ palette_attributes = [
 palette_attributes.each do |a|
   new_palette = Palette.create(a)
 end
+
+review = Review.create(review:"test", user_id: 1, palette_id: 1)

@@ -1,14 +1,22 @@
 import React, { Component } from 'react'
 import PaletteShow from '../components/PaletteShow'
 import ReviewsIndexContainer from './ReviewsIndexContainer'
-import ReviewsFormContainer from './ReviewsFormContainer'
+import TextField from '../components/TextField'
 
 class PaletteShowContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      palette: {}
+      palette: {},
+      reviews: [],
+      user: '',
+      body: ''
     }
+
+    this.handleBodyChange = this.handleBodyChange.bind(this)
+    this.handleClearForm = this.handleClearForm.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.addReview = this.addReview.bind(this)
   }
 
   componentDidMount() {
@@ -24,9 +32,52 @@ class PaletteShowContainer extends Component {
       })
       .then(response => response.json())
       .then(palette => {
-        this.setState( { palette: palette.palette } )
+        this.setState( {
+          palette: palette.palette,
+          reviews: palette.palette.reviews,
+          user: palette.palette.user
+        })
       })
       .catch(error => console.error(`${error.message}`))
+  }
+
+  handleBodyChange(event) {
+    this.setState({ body: event.target.value })
+  }
+
+  handleClearForm(event) {
+    event.preventDefault()
+    this.setState({ body: '' })
+  }
+
+  addReview(submission) {
+    let paletteId = this.state.palette.id
+    fetch(`/api/v1/palettes/${paletteId}/reviews`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify(submission)
+    }).then(response => response.json())
+      .then(reviews => {
+        this.setState( {
+          reviews: reviews,
+          body: ''
+        })
+    })
+  }
+
+  handleSubmit(event) {
+    event.preventDefault()
+
+    let formPayload = {
+      review: {
+        review: this.state.body,
+        palette_id: this.state.palette.id
+      }
+    }
+    this.addReview(formPayload)
   }
 
   render() {
@@ -40,12 +91,23 @@ class PaletteShowContainer extends Component {
           description = {this.state.palette.description}
         />
 
-        <ReviewsFormContainer
-          id={this.state.palette.id}
-        />
+        <div className = "review-form">
+          <TextField
+            content={this.state.body}
+            label="Add A Review"
+            name="Add A Review"
+            handlerFunction={this.handleBodyChange}
+          />
+
+          <div className="button-group">
+            <button className="button" onClick={this.handleClearForm}>Clear</button>
+            <button className="button" onClick={this.handleSubmit}>Submit</button>
+          </div>
+        </div>
 
         <ReviewsIndexContainer
-          reviews={this.state.palette.reviews}
+          reviews={this.state.reviews}
+          user={this.state.user}
         />
       </div>
     )

@@ -19,14 +19,14 @@ RSpec.describe Api::V1::PalettesController, type: :controller do
 
       expect(data["palettes"].length).to eq 2
 
-      expect(data["palettes"][0]["title"]).to eq "Fall Leaves"
-      expect(data["palettes"][1]["title"]).to eq "Buddha in Rain"
+      expect(data["palettes"][0]["title"]).to eq "Buddha in Rain"
+      expect(data["palettes"][1]["title"]).to eq "Fall Leaves"
 
-      expect(data["palettes"][0]["description"]).to eq "Basic white girl drinking a Pumpkin Spiced Latte on the first day of Fall."
-      expect(data["palettes"][1]["description"]).to eq "A soothing palette of blues."
+      expect(data["palettes"][0]["description"]).to eq "A soothing palette of blues."
+      expect(data["palettes"][1]["description"]).to eq "Basic white girl drinking a Pumpkin Spiced Latte on the first day of Fall."
 
-      expect(data["palettes"][0]["hexcodes"]).to eq ["#E8BA41","#E69039", "#E2642B", "#B0361C", "#68140C"]
-      expect(data["palettes"][1]["hexcodes"]).to eq ["#EF8533","#F9D958", "#CDCB65", "#96B064", "#1D2B32"]
+      expect(data["palettes"][0]["hexcodes"]).to eq ["#EF8533","#F9D958", "#CDCB65", "#96B064", "#1D2B32"]
+      expect(data["palettes"][1]["hexcodes"]).to eq ["#E8BA41","#E69039", "#E2642B", "#B0361C", "#68140C"]
     end
   end
 

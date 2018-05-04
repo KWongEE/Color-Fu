@@ -15,6 +15,7 @@
 *= require foundation_and_overrides
 
 */
+<<<<<<< HEAD:app/assets/stylesheets/application.css
 
 /* .head-background {
   background-img: url('images/Wedding-Collections-Header.jpg')
@@ -27,6 +28,29 @@
 h1 {
   color: white;
   text-align: center;
+=======
+.title {
+  padding-top: .25em;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 4em;
+}
+
+.flash {
+  color: yellow;
+}
+
+a:hover {
+  color: inherit;
+}
+
+.create {
+  padding-left: 2em;
+  padding-top: 1.5em;
+}
+
+.left {
+  top: 20px;
+>>>>>>> 8080161222e18726c22c81503816f556df0a986c:app/assets/stylesheets/application.scss
 }
 
 h1 {
@@ -51,6 +75,13 @@ body {
 #header-background {
   background-image: url("images/colorful-dots-artistic-abstract-website-header.jpg");
   height: 7em;
+}
+
+#header-background {
+  background-image: image-url("colorful-dots.jpg");
+  background-repeat: no-repeat;
+  height: 8em;
+  background-size: cover;
 }
 
 h2 {
@@ -111,9 +142,13 @@ h2 {
 
 p {
   color: white;
-  font-size: 24px;
+  font-size: 16px;
   text-align: center;
+<<<<<<< HEAD:app/assets/stylesheets/application.css
   font-family: 'Georgia';
+=======
+  font-family: 'Avenir Next';
+>>>>>>> 8080161222e18726c22c81503816f556df0a986c:app/assets/stylesheets/application.scss
 }
 
 .description {
@@ -130,6 +165,7 @@ div.actions {
   text-align: center;
 }
 
+<<<<<<< HEAD:app/assets/stylesheets/application.css
 #submit {
   height: 37px;
 }
@@ -146,4 +182,19 @@ div.actions {
 
 #search {
   width: 13em;
+=======
+.row {
+  padding-top: 1.15em;
+}
+
+.search {
+  width: 18em;
+  margin: auto;
+}
+
+.searchbar {
+  width: 50%;
+  padding-top: .75em;
+  margin: auto;
+>>>>>>> 8080161222e18726c22c81503816f556df0a986c:app/assets/stylesheets/application.scss
 }

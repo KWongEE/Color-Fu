@@ -12,7 +12,8 @@ class SearchBar extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.filteredPalettes = this.filteredPalettes.bind(this)
-}
+  }
+
   componentDidMount() {
    fetch('api/v1/palettes')
      .then(response => {
@@ -32,20 +33,18 @@ class SearchBar extends Component {
   handleChange(event) {
     this.setState({search: event.target.value})
   }
+
   handleSubmit(event) {
     event.preventDefault()
-
     let formPayload = {
       search: this.state.search
     }
-
     this.filteredPalettes(formPayload)
   }
 
   filteredPalettes(formPayload) {
     let searchResults = []
     let search = formPayload.search.toString().toLowerCase();
-
     this.state.palettes.forEach((palette) => {
       if (palette["title"].toLowerCase().includes(search)) {
        searchResults.push(palette)
@@ -53,6 +52,7 @@ class SearchBar extends Component {
       this.setState({ finalResults: searchResults })
     })
   }
+
   render() {
     let finalResults = this.state.finalResults.map(palette => {
       return(
@@ -84,7 +84,5 @@ class SearchBar extends Component {
    )
   }
 }
-
-
 
 export default SearchBar

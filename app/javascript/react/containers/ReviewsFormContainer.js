@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TextField from '../components/TextField'
+import { browserHistory } from 'react-router'
 
 class ReviewsFormContainer extends Component {
   constructor(props) {
@@ -32,6 +33,8 @@ class ReviewsFormContainer extends Component {
       },
       credentials: 'same-origin',
       body: JSON.stringify(submission)
+    }).then( () => {
+      browserHistory.push(`/palettes/${paletteId}`)
     })
   }
 

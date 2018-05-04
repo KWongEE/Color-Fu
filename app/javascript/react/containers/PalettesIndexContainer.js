@@ -5,13 +5,12 @@ class PalettesIndexContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      allPalettes: [],
       palettes: [],
       search: '',
       finalResults: []
     }
-    this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.filteredPalettes = this.filteredPalettes.bind(this)
   }
 
   componentDidMount() {
@@ -25,34 +24,27 @@ class PalettesIndexContainer extends Component {
      })
      .then(response => response.json())
      .then(paletteObjs => {
-       this.setState( { palettes: paletteObjs.palettes } )
+       this.setState({
+         allPalettes: paletteObjs.palettes,
+         palettes: paletteObjs.palettes
+        })
      })
      .catch(error => console.error(`${error.message}`))
   }
 
   handleChange(event) {
-    this.setState({search: event.target.value})
-  }
-
-  handleSubmit(event) {
-    event.preventDefault()
-
-    let formPayload = {
-      search: this.state.search
-    }
-
-    this.filteredPalettes(formPayload)
-  }
-
-  filteredPalettes(formPayload) {
+    let formPayload = {search: event.target.value}
     let searchResults = []
-    let search = formPayload.search.toString().toLowerCase();
+    let search = formPayload.search.toLowerCase();
 
-    this.state.palettes.forEach((palette) => {
+    this.state.allPalettes.forEach((palette) => {
       if (palette["title"].toLowerCase().includes(search)) {
        searchResults.push(palette)
      }
-      this.setState({ finalResults: searchResults })
+      this.setState({
+        palettes: searchResults,
+        search: event.target.value
+      })
     })
   }
 
@@ -81,20 +73,19 @@ class PalettesIndexContainer extends Component {
     })
 
     return(
-     <div id="index-container">
-       <div id="searchbar">
-         <input
-           id="search"
-           type='text'
-           value={this.state.search}
-           onChange={this.handleChange}
-           placeholder="Search Palettes"
-         />
-         <input type="submit" id="submit" value="Go" onClick= {this.handleSubmit}/>
+     <div className="index-container">
+       <div className="columns large-12 small-12 medium-12">
+        <div className="searchbar small-12 large-12">
+           <input
+             id="search"
+             type='text'
+             value={this.state.search}
+             onChange={this.handleChange}
+             placeholder="Discover Palettes"
+           />
+        </div>
        </div>
-       <div className="row">
-         {finalResults}
-       </div>
+
        <div className="row">
          {palettes}
        </div>
