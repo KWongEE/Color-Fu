@@ -77,6 +77,8 @@ h2 {
 .review-form {
   color: white;
   font-family: "Georgia";
+  width: 60%;
+  margin-left:2%;
 }
 
 .colorTile {
@@ -135,10 +137,6 @@ div.actions {
   text-align: center;
 }
 
-.row {
-  padding-top: 1.15em;
-}
-
 .search {
   width: 18em;
   margin: auto;
@@ -148,4 +146,29 @@ div.actions {
   width: 50%;
   padding-top: .75em;
   margin: auto;
+}
+.row {
+  padding-top: 1.15em;
+}
+.review-group {
+  color: white;
+  font-family:'Georgia';
+  margin-left:1em;
+}
+.review-user {
+  float:left;
+  margin-right:2%;
+}
+.review-body {
+  margin-left: 4%;
+  width: 18em;
+  text-align: left;
+}
+
+.review-tile {
+  border: 3px solid gray;
+  border-radius: 10px;
+  width: 25em;
+  margin-top:5px;
+  margin-left:2%;
 }
