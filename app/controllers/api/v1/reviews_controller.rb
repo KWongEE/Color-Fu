@@ -4,7 +4,13 @@ class Api::V1::ReviewsController < ApplicationController
   def create
 
     review = Review.new(review_params)
-    review.user = current_user
+
+    if current_user
+      review.user = current_user
+    else
+      review.user_id = 1
+    end
+
     review.save
 
     reviews = Review.where(palette_id: params["palette_id"]).reverse
