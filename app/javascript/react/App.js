@@ -3,13 +3,12 @@ import { Route, IndexRoute, Router, withRouter } from 'react-router'
 import { browserHistory } from 'react-router'
 import PalettesIndexContainer from './containers/PalettesIndexContainer'
 import PaletteShowContainer from './containers/PaletteShowContainer'
-import NavBar from './components/NavBar'
 import ColorPicker from './components/ColorPicker'
 
 const App = (props) => {
   return(
     <Router history={browserHistory}>
-      <Route path='/'  component = {NavBar}>
+      <Route path='/'>
         <IndexRoute component={PalettesIndexContainer} />
         <Route path='/palettes/new' component={ColorPicker} />
         <Route path="/palettes/:id" component={PaletteShowContainer}/>

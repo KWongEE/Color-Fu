@@ -3,7 +3,7 @@ import React from 'react'
 const ReviewTile = (props) => {
   return(
     <div className="review-tile">
-      <p>{props.body}</p>
+      <p className="review-body">{props.body}</p>
     </div>
   )
 }

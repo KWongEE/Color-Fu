@@ -9,7 +9,9 @@ const ReviewsIndexContainer = (props) => {
       return(
         <ReviewTile
           key={review.id}
-          body={review.review}/>
+          body={review.review}
+          user={review.user}
+        />
       )
     })
     return(
