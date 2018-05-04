@@ -15,20 +15,6 @@
 *= require foundation_and_overrides
 
 */
-<<<<<<< HEAD:app/assets/stylesheets/application.css
-
-/* .head-background {
-  background-img: url('images/Wedding-Collections-Header.jpg')
-  background-repeat: no-repeat;
-  width: auto;
-  background-size: cover;
-  height: 400px;
-} */
-
-h1 {
-  color: white;
-  text-align: center;
-=======
 .title {
   padding-top: .25em;
   font-family: 'Permanent Marker', cursive;
@@ -50,7 +36,6 @@ a:hover {
 
 .left {
   top: 20px;
->>>>>>> 8080161222e18726c22c81503816f556df0a986c:app/assets/stylesheets/application.scss
 }
 
 h1 {
@@ -144,11 +129,7 @@ p {
   color: white;
   font-size: 16px;
   text-align: center;
-<<<<<<< HEAD:app/assets/stylesheets/application.css
-  font-family: 'Georgia';
-=======
   font-family: 'Avenir Next';
->>>>>>> 8080161222e18726c22c81503816f556df0a986c:app/assets/stylesheets/application.scss
 }
 
 .description {
@@ -165,24 +146,6 @@ div.actions {
   text-align: center;
 }
 
-<<<<<<< HEAD:app/assets/stylesheets/application.css
-#submit {
-  height: 37px;
-}
-
-.navbar {
-  margin-left: 27em;
-}
-
-#searchbar {
-  display: inline-flex;
-  padding-left: 48em;
-  margin-top: -1em;
-}
-
-#search {
-  width: 13em;
-=======
 .row {
   padding-top: 1.15em;
 }
@@ -196,5 +159,4 @@ div.actions {
   width: 50%;
   padding-top: .75em;
   margin: auto;
->>>>>>> 8080161222e18726c22c81503816f556df0a986c:app/assets/stylesheets/application.scss
 }
