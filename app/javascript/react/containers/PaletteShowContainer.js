@@ -62,7 +62,7 @@ class PaletteShowContainer extends Component {
     }).then(response => response.json())
       .then(reviews => {
         this.setState( {
-          reviews: reviews,
+          reviews: reviews.reviews,
           body: ''
         })
     })
@@ -107,7 +107,6 @@ class PaletteShowContainer extends Component {
 
         <ReviewsIndexContainer
           reviews={this.state.reviews}
-          user={this.state.user}
         />
       </div>
     )

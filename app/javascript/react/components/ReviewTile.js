@@ -7,15 +7,14 @@ const ReviewTile = (props) => {
   return(
     <div className="review-tile">
         <p className="review-body">{props.body}</p>
-      <div className="review-group">
-      <div className="review-user">Posted by: {email}</div>
-      <div className="review-date">At {date}</div>
-      <p></p>
+        <div className="review-group">
+        <div className="review-user">Posted by: {email}</div>
+        <div className="review-date">At {date}</div>
+        <p></p>
     </div>
 
     </div>
   )
 }
-
 
 export default ReviewTile
