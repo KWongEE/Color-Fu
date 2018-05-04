@@ -9,6 +9,7 @@ class PaletteShowContainer extends Component {
     this.state = {
       palette: {},
       reviews: [],
+      user: '',
       body: ''
     }
 
@@ -33,7 +34,8 @@ class PaletteShowContainer extends Component {
       .then(palette => {
         this.setState( {
           palette: palette.palette,
-          reviews: palette.palette.reviews
+          reviews: palette.palette.reviews,
+          user: palette.palette.user
         })
       })
       .catch(error => console.error(`${error.message}`))
@@ -105,6 +107,7 @@ class PaletteShowContainer extends Component {
 
         <ReviewsIndexContainer
           reviews={this.state.reviews}
+          user={this.state.user}
         />
       </div>
     )

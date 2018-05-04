@@ -12,7 +12,6 @@ class Api::V1::ReviewsController < ApplicationController
     end
 
     review.save
-
     reviews = Review.where(palette_id: params["palette_id"]).reverse
     render json: reviews
   end
