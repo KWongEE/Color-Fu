@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PaletteShow from '../components/PaletteShow'
 import ReviewsIndexContainer from './ReviewsIndexContainer'
 import TextField from '../components/TextField'
+import Color from '../components/Color'
 
 class PaletteShowContainer extends Component {
   constructor(props) {
@@ -10,14 +11,22 @@ class PaletteShowContainer extends Component {
       palette: {},
       reviews: [],
       user: '',
-      body: ''
+      body: '',
+      shown: false
     }
 
     this.handleBodyChange = this.handleBodyChange.bind(this)
     this.handleClearForm = this.handleClearForm.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.addReview = this.addReview.bind(this)
+    this.show = this.show.bind(this)
   }
+
+  show() {
+		this.setState({
+			shown: !this.state.shown
+		});
+	}
 
   componentDidMount() {
     let paletteId = this.props.params.id
@@ -81,8 +90,13 @@ class PaletteShowContainer extends Component {
   }
 
   render() {
+    let shown = {display: this.state.shown ? "block" : "none"}
+    let hidden = { display: this.state.shown ? "none" : "block"}
+    let hexcodes = this.state.palette.hexcodes
+
+
     return(
-      <div>
+      <div >
         <PaletteShow
           id={this.state.palette.id}
           palette={this.state.palette}
@@ -90,6 +104,10 @@ class PaletteShowContainer extends Component {
           hexcodes={this.state.palette.hexcodes}
           description = {this.state.palette.description}
         />
+
+      <p id= 'hexcodes' style={shown}> {hexcodes}</p>
+
+      <button id="hexcode-button" className = 'button' onClick={this.show}>Show Codes</button>
 
         <div className = "review-form">
           <TextField

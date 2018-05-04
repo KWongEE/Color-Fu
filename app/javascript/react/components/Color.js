@@ -1,4 +1,5 @@
 import React from 'react'
+import PaletteShowContainer from '../containers/PaletteShowContainer'
 
 const Color = (props) => {
   return(
