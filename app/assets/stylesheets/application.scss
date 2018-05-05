@@ -47,10 +47,14 @@ h1 {
 a {
   color: white;
   text-align: center;
+  font-family: 'Century Schoolbook';
+  font-size: 1em;
+
 }
 
+
 body {
-  background-color: #262626
+  background-color: #262626;
 }
 
 #header-background {
@@ -64,6 +68,7 @@ h2 {
   color: white;
   text-align: center;
 }
+
 .new-palette-form {
   width: 40%;
   height: 10%;
@@ -104,7 +109,7 @@ h2 {
   border-color: grey;
 }
 
-.show{
+.show {
   width: 50%;
   height: 55%;
   display: inline-block;
@@ -128,6 +133,7 @@ p {
   text-align: center;
   color: white;
 }
+
 
 div.field {
   margin: 1em 3em;

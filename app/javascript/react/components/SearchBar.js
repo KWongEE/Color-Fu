@@ -52,7 +52,7 @@ class SearchBar extends Component {
       this.setState({ finalResults: searchResults })
     })
   }
-  
+
   render() {
     let finalResults = this.state.finalResults.map(palette => {
       return(
