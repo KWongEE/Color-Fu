@@ -93,7 +93,9 @@ class PaletteShowContainer extends Component {
     let shown = {display: this.state.shown ? "block" : "none"}
     let hidden = { display: this.state.shown ? "none" : "block"}
     let hexcodes = this.state.palette.hexcodes
-
+    if(hexcodes){
+      hexcodes = hexcodes.join(', ')
+    }
 
     return(
       <div >
